@@ -44,5 +44,5 @@ bin/
 
 ### CONFIGS ###
 
-src/main/java/net/steelcode/discord/config/**
+src/main/java/net/steelcode/discord/config/Configuration.java
 src/main/resources/application.properties
