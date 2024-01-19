@@ -5,71 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="986869ed-4dc1-4382-9f40-b130676c062c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/DiscordApiSpringBootApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/controllers/ArtistController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/controllers/QuoteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/dto/IDiscordFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/dto/WeeklyEntryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/dto/art/ArtistDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/dto/art/ImageDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/dto/quote/QuoteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/entity/Tag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/entity/WeeklyEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/entity/art/Artist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/entity/art/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/entity/quote/Quote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/repository/QuoteTagRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/repository/WeeklyEntryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/repository/art/ArtistRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/repository/art/ImageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/models/repository/quote/QuoteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/StartupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/converters/AbstractConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/converters/WeeklyEntryConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/converters/art/ArtistConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/converters/art/ImageConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/converters/quote/QuoteConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/entities/ImageAndArtistService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/entities/QuoteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/entities/WeeklyEntryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/api/services/rest/CoppermindRestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/config/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/ready_events/GetGuildsOnStartupEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/ready_events/IReadyEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/slash_commands_events/ISlashCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/slash_commands_events/text_commands/art/ArtistCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/slash_commands_events/text_commands/art/ImageCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/slash_commands_events/text_commands/fixed_response/CosmereEsCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/slash_commands_events/text_commands/fixed_response/CreativityCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/slash_commands_events/text_commands/text/CoppermindCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/slash_commands_events/text_commands/text/QuoteCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/events/slash_commands_events/text_commands/text/WeeklyUpdateCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/listeners/ReadyEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/listeners/SlashCommandListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/register/GlobalCommandRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/steelcode/discord/register/GuildCommandRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/commands/global/artista.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/commands/global/coppermind.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/commands/global/cosmere_es.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/commands/global/creativity.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/commands/global/image.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/commands/global/quote.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/commands/global/weekly.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
