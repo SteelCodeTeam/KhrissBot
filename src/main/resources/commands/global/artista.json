@@ -1,0 +1,12 @@
+{
+  "name": "artista",
+  "description": "¡Muestra informacion de un artista del cosmere!",
+  "options": [
+    {
+      "name": "nick",
+      "description": "Usa el nick del artista para conocer sus redes",
+      "type": 3,
+      "required": true
+    }
+  ]
+}

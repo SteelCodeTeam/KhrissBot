@@ -1,0 +1,17 @@
+{
+  "name": "quote",
+  "description": "¡Muestra una quote del cosmere!",
+  "options": [
+    {
+      "name": "id",
+      "description": "Obten una quote por su id",
+      "type": 4,
+      "required": false
+    }, {
+      "name": "tag",
+      "description": "tag por el que se buscará la quote",
+      "type": 3,
+      "required": false
+    }
+  ]
+}

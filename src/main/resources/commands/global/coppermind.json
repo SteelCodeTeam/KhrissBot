@@ -1,0 +1,12 @@
+{
+  "name": "coppermind",
+  "description": "¡Busca cualquier articulo de la Coppermind!",
+  "options": [
+    {
+      "name": "tag",
+      "description": "palabra o frase a buscar en la Coppermind",
+      "type": 3,
+      "required": true
+    }
+  ]
+}

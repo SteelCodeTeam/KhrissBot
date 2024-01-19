@@ -1,0 +1,17 @@
+{
+  "name": "weekly",
+  "description": "¡Muestra las ultimas novedades!",
+  "options": [
+    {
+      "name": "week",
+      "description": "Semana del año a la que pertenece la weekly update",
+      "type": 4,
+      "required": false
+    }, {
+      "name": "year",
+      "description": "Año al que pertenece la weekly update",
+      "type": 4,
+      "required": false
+    }
+  ]
+}
