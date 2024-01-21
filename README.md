@@ -19,6 +19,7 @@ KhrissBot is a public bot for the Spanish Discord Cosmere community. Several com
 We recommend reading the work of Brandon Sanderson since the content of this bot is based on his work!
 <br>
 
+
 ------
 
 <br>
