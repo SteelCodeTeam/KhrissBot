@@ -30,7 +30,7 @@ public class ImageCommand implements ISlashCommand {
 
     @Override
     public String getName() {
-        return "image";
+        return "imagen";
     }
 
     @Override
@@ -42,7 +42,7 @@ public class ImageCommand implements ISlashCommand {
                 .map(ApplicationCommandInteractionOptionValue::asLong)
                 .orElse(null);
 
-        String tag = event.getOption("tag")
+        String tag = event.getOption("busqueda")
                 .flatMap(ApplicationCommandInteractionOption::getValue)
                 .map(ApplicationCommandInteractionOptionValue::asString)
                 .orElse(null);
@@ -52,50 +52,55 @@ public class ImageCommand implements ISlashCommand {
                 .map(ApplicationCommandInteractionOptionValue::asString)
                 .orElse(null);
 
+        return event.deferReply().then(Mono.fromCallable(() -> {
+            return "Buscando imagen...";
+        }).flatMap(message -> {
 
-        Optional<ImageDTO> imageOpt;
-        List<ArtistDTO> artistDTO;
+            event.editReply(message);
+            Optional<ImageDTO> imageOpt;
+            List<ArtistDTO> artistDTO;
 
-        if (id != null) {
-            imageOpt = service.findImageById(id);
-        } else if (tag != null) {
-            if (nick != null) {
-                imageOpt = service.findImageByTagAndArtist(tag, nick);
+            if (id != null) {
+                imageOpt = service.findImageById(id);
+            } else if (tag != null) {
+                if (nick != null) {
+                    imageOpt = service.findImageByTagAndArtist(tag, nick);
+                } else {
+                    imageOpt = service.findImageByTag(tag);
+                }
             } else {
-                imageOpt = service.findImageByTag(tag);
+                return event.editReply("Debes introducir un parametro de busqueda o un id para buscar la imagen.");
             }
-        } else {
-            return event.reply("Debes enviar un tag o un id para buscar la imagen.").withEphemeral(true);
-        }
 
-        if (imageOpt.isEmpty()) {
-            return event.reply("No se ha encontrado ninguna imagen.").withEphemeral(true);
-        }
+            if (imageOpt.isEmpty()) {
+                return event.editReply("No se ha encontrado ninguna imagen.");
+            }
 
-        artistDTO = service.findArtistsByImageId(imageOpt.get().getId());
+            artistDTO = service.findArtistsByImageId(imageOpt.get().getId());
 
+            List<EmbedCreateSpec> embeds = new ArrayList<>();
+            for (ArtistDTO artist: artistDTO) {
+                embeds.add(EmbedCreateSpec.builder()
+                        .color(Color.BLUE)
+                        .title("Link a las redes de " + artist.getNick())
+                        .url(artist.getRedPrincipal())
+                        .author("Imagen de " + imageOpt.get().getTitle(), null, "")
+                        .thumbnail(artist.getImageProfile())
+                        .description("Puedes ver mas informacion del artista con el comando /artista")
+                        .footer("Mas artistas en Creativity Avatars. /creativity", null)
+                        .build());
+            }
 
-        List<EmbedCreateSpec> embeds = new ArrayList<>();
-        for (ArtistDTO artist: artistDTO) {
-            embeds.add(EmbedCreateSpec.builder()
-                    .color(Color.BLUE)
-                    .title("Link a las redes de " + artist.getNick())
-                    .url(artist.getRedPrincipal())
-                    .author("Imagen de " + imageOpt.get().getTitle(), null, "")
-                    .thumbnail(artist.getImageProfile())
-                    .description("Puedes ver mas informacion del artista con el comando /artista")
-                    .footer("Mas artistas en Creativity Avatars. /creativity", null)
-                    .build());
-        }
+            try {
+                InputStream targetStream = new ByteArrayInputStream(imageOpt.get().getImage());
 
-        try {
-            InputStream targetStream = new ByteArrayInputStream(imageOpt.get().getImage());
-            return event.reply("Puede contener spoilers de: **El camino de los reyes**").withEmbeds(embeds).withFileSpoilers(MessageCreateFields.FileSpoiler.of("SPOILER_image.png", targetStream));
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+                return event.editReply("Puede contener spoilers de: **" + imageOpt.get().getSpoilers() + "**").withEmbeds(embeds).withFileSpoilers(MessageCreateFields.FileSpoiler.of("SPOILER_image.png", targetStream));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return null;
 
-        return null;
+        })).then();
 
     }
 }

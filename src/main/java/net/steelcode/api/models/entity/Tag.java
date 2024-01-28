@@ -26,11 +26,11 @@ public class Tag implements Serializable {
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ToString.Exclude
-    @ManyToMany(cascade=CascadeType.ALL, mappedBy="tags", fetch = FetchType.EAGER)
+    @ManyToMany(cascade=CascadeType.ALL, mappedBy="tags", fetch = FetchType.LAZY)
     private List<Quote> quotes;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ToString.Exclude
-    @ManyToMany(cascade=CascadeType.ALL, mappedBy="tags", fetch = FetchType.EAGER)
+    @ManyToMany(cascade=CascadeType.ALL, mappedBy="tags", fetch = FetchType.LAZY)
     private List<Image> images;
 }

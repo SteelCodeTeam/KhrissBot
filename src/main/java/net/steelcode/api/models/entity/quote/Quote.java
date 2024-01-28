@@ -23,13 +23,15 @@ public class Quote implements Serializable {
 
     private int page;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 1312,  columnDefinition = "TEXT")
     private String quote;
 
     @Column(nullable = false)
     private Boolean saidByAnyone;
 
     private String said;
+
+    private String spoiler;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name="quote_quote_tags", joinColumns=@JoinColumn(name="quote_id"), inverseJoinColumns=@JoinColumn(name="quote_tag_id"))

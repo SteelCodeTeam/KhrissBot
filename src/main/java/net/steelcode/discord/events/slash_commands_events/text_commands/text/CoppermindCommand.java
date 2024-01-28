@@ -33,7 +33,7 @@ public class CoppermindCommand implements ISlashCommand {
     public Mono<Void> handle(ChatInputInteractionEvent event) {
         log.info("handling coppermind event");
 
-        String tag = event.getOption("tag")
+        String tag = event.getOption("busqueda")
                 .flatMap(ApplicationCommandInteractionOption::getValue)
                 .map(ApplicationCommandInteractionOptionValue::asString)
                 .orElse(null);

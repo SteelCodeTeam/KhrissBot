@@ -13,16 +13,18 @@ public class QuoteDTO implements IDiscordFormat {
     private String book;
     private int page;
     private String quote;
+    private String spoiler;
     private Boolean saidByAnyone;
     private String said;
 
     @Override
     public String getDiscordTextFormatted() {
-        String str = "\"" + quote + "\"";
+        String str = "\"||" + quote + "\"";
         if (saidByAnyone) {
             str = str + "\n- " + said;
         }
-        str = str + "\n*" + book + ". Pagina " + page + ". Id: " + id + "*";
+        str = str + "||";
+        str = str + "\n*" + book + ". Pagina " + page + ". Id: " + id + "*. **Contiene Spoilers de: " + spoiler + "**";
 
         return str;
     }

@@ -8,7 +8,7 @@
       "type": 4,
       "required": false
     }, {
-      "name": "tag",
+      "name": "busqueda",
       "description": "tag por el que se buscará la quote",
       "type": 3,
       "required": false

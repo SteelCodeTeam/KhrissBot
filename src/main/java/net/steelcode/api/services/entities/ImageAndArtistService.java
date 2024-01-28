@@ -47,13 +47,8 @@ public class ImageAndArtistService {
         if (optTag.isEmpty()) {
             return Optional.empty();
         } else {
-            List<Image> image = optTag.get().getImages();
-            if (image.isEmpty()) {
-                return Optional.empty();
-            } else {
-                Collections.shuffle(image);
-                return Optional.of(imageConverter.fromEntity(image.get(0)));
-            }
+            Optional<Image> image = imageRepository.findImagesByTags(optTag.get().getTag());
+            return image.map(value -> imageConverter.fromEntity(value));
         }
     }
 

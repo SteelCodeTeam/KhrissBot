@@ -17,6 +17,7 @@ public class QuoteConverter extends AbstractConverter<Quote, QuoteDTO> {
         quote.setBook(quoteDTO.getBook());
         quote.setSaidByAnyone(quoteDTO.getSaidByAnyone());
         quote.setSaid(quoteDTO.getSaid());
+        quote.setSpoiler(quoteDTO.getSpoiler());
 
         return quote;
     }
@@ -31,6 +32,7 @@ public class QuoteConverter extends AbstractConverter<Quote, QuoteDTO> {
         quoteDTO.setBook(quote.getBook());
         quoteDTO.setSaidByAnyone(quote.getSaidByAnyone());
         quoteDTO.setSaid(quote.getSaid());
+        quoteDTO.setSpoiler(quote.getSpoiler());
 
         return quoteDTO;
     }

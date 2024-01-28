@@ -21,7 +21,6 @@ public class DiscordApiSpringBootApplication {
 
     }
 
-
     @Bean
     public GatewayDiscordClient gatewayDiscordClient() {
         return DiscordClientBuilder.create(Configuration.TOKEN).build()

@@ -1,5 +1,5 @@
 {
-  "name": "image",
+  "name": "imagen",
   "description": "¡Muestra una imagen del cosmere!",
   "options": [
     {
@@ -8,12 +8,12 @@
       "type": 4,
       "required": false
     }, {
-      "name": "tag",
+      "name": "busqueda",
       "description": "tag por el que se buscará la imagen",
       "type": 3,
       "required": false
     }, {
-      "name": "artist",
+      "name": "artista",
       "description": "artista del que se buscará la imagen",
       "type": 3,
       "required": false

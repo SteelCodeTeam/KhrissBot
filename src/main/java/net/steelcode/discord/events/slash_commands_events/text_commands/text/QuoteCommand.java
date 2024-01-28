@@ -34,7 +34,7 @@ public class QuoteCommand implements ISlashCommand {
                 .map(ApplicationCommandInteractionOptionValue::asLong)
                 .orElse(null);
 
-        String tag = event.getOption("tag")
+        String tag = event.getOption("busqueda")
                 .flatMap(ApplicationCommandInteractionOption::getValue)
                 .map(ApplicationCommandInteractionOptionValue::asString)
                 .orElse(null);

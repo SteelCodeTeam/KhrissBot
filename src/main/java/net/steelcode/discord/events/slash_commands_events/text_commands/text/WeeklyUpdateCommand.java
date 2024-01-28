@@ -28,12 +28,12 @@ public class WeeklyUpdateCommand implements ISlashCommand {
         log.info("handling weekly update event");
 
 
-        Long week = event.getOption("week")
+        Long week = event.getOption("semana")
                 .flatMap(ApplicationCommandInteractionOption::getValue)
                 .map(ApplicationCommandInteractionOptionValue::asLong)
                 .orElse(null);
 
-        Long year = event.getOption("year")
+        Long year = event.getOption("año")
                 .flatMap(ApplicationCommandInteractionOption::getValue)
                 .map(ApplicationCommandInteractionOptionValue::asLong)
                 .orElse(null);
